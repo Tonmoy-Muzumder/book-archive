@@ -1,6 +1,3 @@
-const resultFound = document.getElementById('resut-found');
-console.log('get result', resultFound);
-
 const SearchBook = () => {
   const searchField = document.getElementById('search-field');
   const searchText = searchField.value;
@@ -22,17 +19,14 @@ const SearchBook = () => {
 
 
 const displaySearchResult = docs => {
-  console.log('abc', docs.length)
+  
   const searchResult = document.getElementById('search-result');
   docs.forEach(doc => {
     const cover_i =doc.cover_i;
-    console.log(cover_i)
+    
     const imgUrl = `https://covers.openlibrary.org/b/id/${cover_i}.jpg`
     
-    // fetch(imgUrl)
-    // .then(res => res.json())
-    // .then(data => console.log(data));
-
+    // creating div
     const div = document.createElement('div');
     div.classList.add('col');
     div.innerHTML = `
@@ -53,4 +47,3 @@ const displaySearchResult = docs => {
     searchResult.appendChild(div);
   })
 }
-//  fetch (`https://covers.openlibrary.org/b/id/${cover_i}-M.jpg`)
